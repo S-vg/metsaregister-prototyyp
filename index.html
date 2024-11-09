@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metsaregister Prototüüp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sisselogimise leht -->
+    <div class="login-page">
+        <h2>Logi sisse</h2>
+        <form>
+            <label>Kasutajanimi</label>
+            <input type="text" placeholder="Sisesta kasutajanimi">
+            <label>Parool</label>
+            <input type="password" placeholder="Sisesta parool">
+            <button type="button" onclick="showMainPage()">Logi sisse</button>
+        </form>
+    </div>
+
+    <!-- Avaleht (pärast sisselogimist) -->
+    <div class="main-page" style="display: none;">
+        <div class="map-view">
+            <h3>Metsaregister</h3>
+            <div id="map">[Kaardi ala]</div>
+        </div>
+        <div class="property-list">
+            <h3>Kinnistud</h3>
+            <table>
+                <tr>
+                    <th>Nimi</th>
+                    <th>Asukoht</th>
+                    <th>Staatus</th>
+                </tr>
+                <tr onclick="openPropertyDetails('Kinnistu 1')">
+                    <td>Kinnistu 1</td>
+                    <td>Tartumaa</td>
+                    <td>Ootel</td>
+                </tr>
+                <!-- Siia saab hiljem lisada rohkem kinnistuid -->
+            </table>
+        </div>
+    </div>
+
+    <!-- Kinnistu detailvaade -->
+    <div class="property-details" style="display: none;">
+        <h3>Kinnistu 1 – Detailvaade</h3>
+        <p><strong>Nimi:</strong> Kinnistu 1</p>
+        <p><strong>Asukoht:</strong> Tartumaa</p>
+        <p><strong>Pindala:</strong> 5 ha</p>
+        <p><strong>Omanik:</strong> Jaan Tamm</p>
+        <p><strong>Kontakt:</strong> +372 555 1234</p>
+        
+        <label>Staatus:</label>
+        <select>
+            <option>Ootel</option>
+            <option>Helistatud</option>
+            <option>Läbitöötatud</option>
+        </select>
+
+        <h4>Märkmed:</h4>
+        <textarea placeholder="Lisa märkmeid..."></textarea>
+        <button onclick="saveNotes()">Salvesta märkmed</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
